@@ -1,0 +1,138 @@
+.full-item {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin-inline: auto;
+}
+
+.full-item-left {
+  background-color: white;
+}
+
+.item-img {
+  width: 70%;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0;
+  margin-inline: auto;
+  margin-bottom: 1rem;
+}
+
+.full-item-right {
+  display: grid;
+  grid-template-rows: 200px 300px auto;
+
+  gap: 1rem;
+}
+.full-item-right-1 {
+  box-shadow: 1px 1px 8px 1px rgb(250, 248, 248);
+  padding: 1rem;
+  margin: 0 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.review {
+  display: block;
+  max-height: 330px;
+  overflow: auto;
+}
+
+.item-textarea {
+  border: solid 2px lightgrey;
+  padding: 0.5rem;
+  line-height: 1.3;
+  margin: 1rem 0;
+  background-color: rgba(245, 245, 245, 0.939);
+}
+
+.item-name {
+  text-align: center;
+  margin: 1rem 0;
+  padding: 0.3rem;
+  font-size: 0.9rem;
+  color: grey;
+}
+
+hr {
+  border: 0;
+  clear: both;
+  display: block;
+  width: 96%;
+  background-color: #e3e3e0;
+  height: 1px;
+  margin: 0.1rem 0.3rem 0 0;
+  color: grey;
+}
+
+.item-points {
+  line-height: 1.6;
+  word-spacing: 3px;
+  letter-spacing: 0.5px;
+}
+
+.item-des {
+  padding: 0.7rem;
+  white-space: pre-wrap;
+  background: rgb(247, 246, 246);
+  border-radius: 8px;
+  margin-top: 0.3rem;
+}
+
+.users-review {
+  padding: 0.4rem;
+  margin: 0.4rem 0;
+  line-height: 1.4;
+}
+
+@media screen and (max-width: 480px) {
+  .full-item {
+    padding: 0.5rem;
+    display: block;
+    margin-inline: auto;
+  }
+
+  .full-item-left {
+    padding: 0;
+  }
+
+  .item-img {
+    width: 90vw;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-left: 1rem;
+    margin-inline: auto;
+    margin-bottom: 0.5rem;
+  }
+
+  .full-item-right-1 {
+    padding: 0;
+  }
+
+  .item-name {
+    margin: 0.5rem 0;
+    padding: 0.3rem;
+    font-size: 0.8rem;
+  }
+
+  .item-points {
+    width: 100%;
+  }
+
+  .item-des {
+    width: 100%;
+    margin-left: auto;
+    height: 350px;
+    overflow-y: auto;
+    padding: 0.3rem 0.5rem;
+    border-radius: 8px;
+    margin: 0.3rem 0 1rem 0;
+  }
+}

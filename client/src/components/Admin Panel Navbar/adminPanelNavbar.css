@@ -1,0 +1,15 @@
+.adminPanelNavbar-container {
+  text-align: center;
+  background-color: rgb(186, 214, 250);
+  padding: 0.2rem;
+  width: 95%;
+  margin-bottom: 0.5rem;
+  margin-inline: auto;
+}
+
+.adminPanelNavbar-container > ul {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}

@@ -1,0 +1,45 @@
+.productList-container {
+  text-align: center;
+}
+
+.productList-headings1 {
+  display: grid;
+  grid-template-columns: 0.1fr 1fr 2fr 0.4fr 0.3fr 0.4fr;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  margin-inline: auto;
+}
+
+.productList-headings2 {
+  margin-top: 1rem;
+  margin-inline: auto;
+}
+
+.productList-headings2 > p {
+  font-weight: bold;
+}
+
+hr {
+  display: block;
+  width: 95%;
+  margin-inline: auto;
+  background-color: #1a1a19;
+  height: 1px;
+  margin-bottom: 0.8rem;
+}
+
+.productList-data {
+  margin: 0.4rem 0;
+  padding: 0.3rem;
+  box-shadow: 1px 1px 5px 2px rgb(216, 212, 212);
+  margin-inline: auto;
+}
+
+.productList-data:hover {
+  background-color: rgb(233, 240, 243);
+}
+
+.productList-img {
+  text-align: center;
+}

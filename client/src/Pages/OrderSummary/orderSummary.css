@@ -1,0 +1,52 @@
+.orderSummary-container {
+  width: 80%;
+  margin: 1rem auto;
+}
+
+.orderSummary-container > h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.display-view {
+  display: flex;
+  gap: 10%;
+}
+
+.order-det-container {
+  padding: 0.8rem 0.8rem;
+  margin-bottom: 3rem;
+  box-shadow: 1px 1px 3px 3px rgb(241, 241, 241);
+  border-radius: 8px;
+}
+
+.order-info > p {
+  margin: 0.4rem 0;
+  padding: 0.2rem;
+}
+
+.cont-clr {
+  color: grey;
+}
+
+.display {
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 510px) {
+  .orderSummary-container {
+    width: 95%;
+    margin: 1rem auto;
+  }
+
+  .display-view {
+    display: block;
+    gap: 0;
+  }
+
+  .order-det-container {
+    padding: 0.4rem 0.4rem;
+    margin-bottom: 1rem;
+  }
+}

@@ -1,0 +1,110 @@
+.navv {
+  background-color: rgb(173, 227, 250);
+  padding: 1.1rem;
+}
+
+.ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+
+.navbar-left {
+  display: inline-flex;
+  gap: 3rem;
+}
+
+.navbar-login {
+  text-decoration: none;
+  padding: 0.3rem;
+}
+
+.user-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-cart {
+  margin-right: 2rem;
+  color: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart::after {
+  content: "kkphhchdcdscdsdfsdfsfehvjuybhjbu";
+  position: absolute;
+  top: -2rem;
+  left: 6rem;
+  background-color: rgb(255, 6, 52);
+  width: 200px;
+  height: 200px;
+  color: rgb(170, 138, 219);
+}
+
+/* ----------------------- */
+
+.container {
+  position: relative;
+}
+
+.items {
+  display: none;
+}
+
+.liItems {
+  position: absolute;
+  background-color: rgb(212, 207, 247);
+  border-radius: 5px;
+
+  min-width: 110px;
+  margin-top: 1rem;
+  margin-left: -4rem;
+}
+
+.liItems::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 71px;
+  width: 15px;
+  height: 15px;
+  transform: rotate(45deg);
+  background: rgb(212, 207, 247);
+}
+
+.container > ul > li {
+  cursor: pointer;
+  padding: 0.3rem 0.5rem;
+}
+
+.liItems > li:hover {
+  background-color: rgba(238, 239, 240, 0.565);
+}
+
+.top {
+  margin-top: 0.7rem;
+}
+.bottom {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.3rem;
+  color: rgb(249, 115, 32);
+}
+
+.liItems > li > a {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 480px) {
+  .navbar-left {
+    gap: 5%;
+  }
+
+  .navv {
+    padding: 0.7rem 0.4rem;
+  }
+}

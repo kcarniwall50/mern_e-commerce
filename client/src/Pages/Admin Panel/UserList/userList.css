@@ -1,0 +1,45 @@
+.userList-container {
+  text-align: center;
+}
+
+.userList-headings1 {
+  display: grid;
+  grid-template-columns: 0.1fr 1.2fr 1fr 1fr 0.2fr;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  margin-inline: auto;
+}
+
+.userList-headings2 {
+  margin: 1rem 0 0 0;
+  margin-inline: auto;
+}
+
+.userList-headings2 > p {
+  font-weight: bold;
+}
+
+hr {
+  display: block;
+  width: 95%;
+  margin-inline: auto;
+  background-color: #1a1a19;
+  height: 1px;
+  margin-bottom: 0.8rem;
+}
+
+.userList-data {
+  margin: 0.4rem 0;
+  padding: 0.3rem;
+  box-shadow: 1px 1px 5px 2px rgb(216, 212, 212);
+  margin-inline: auto;
+}
+
+.userList-data:hover {
+  background-color: rgb(216, 232, 237);
+}
+
+.userList-img {
+  text-align: center;
+}

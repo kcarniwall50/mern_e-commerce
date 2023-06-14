@@ -1,0 +1,63 @@
+.forgotPass-container{
+
+  width:70%;
+  margin:3rem auto 0 auto;
+  background-color: aliceblue;
+  text-align: center;
+  padding-bottom:0.05rem;
+  box-shadow: 1px 1px 1px   12px rgba(241, 241, 241, 0.933);
+    border-radius: 4px;
+}
+
+.forgot-input{
+ margin:0.5rem 0;
+
+}
+
+.forgot-input>input{
+
+    padding:0.3rem;
+    font-family:Arial, FontAwesome;
+    width:50%;
+    margin-inline:auto;
+    border-radius: 4px;
+ 
+}
+
+.forgot-sub{
+  display:block;
+   width:100%;
+}
+
+.forgot-sub>input{
+    padding:0.2rem;
+    margin-bottom:1.5rem;
+    width:50%;
+    margin-inline: auto;
+    background-color:black;
+    color:white;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 480px)  {
+  .login-container{
+    width:90%;
+    margin-inline: auto;
+    box-shadow: 1px 1px 1px   6px rgba(241, 241, 241, 0.933);
+  }
+
+  .forgot-input>input{
+    width: 80%;
+    margin-inline: auto;
+    padding: 0.4rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .forgot-sub>input{
+    width: 80%;
+    margin-inline: auto;
+    padding: 0.4rem;
+    margin-bottom: 0.3rem;
+  }
+
+}

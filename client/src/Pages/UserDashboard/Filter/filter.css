@@ -1,0 +1,61 @@
+.filter-container {
+  margin-top: 2rem;
+  margin-inline: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 5%;
+}
+
+.filter-container > div > input {
+  width: auto;
+}
+
+.filter-container > div > input,
+select {
+  padding: 0.3rem;
+  border: 1px solid rgb(216, 213, 213);
+  border-radius: 5px;
+}
+
+.filter-container > div > select > option {
+  padding: 1rem;
+}
+
+.btn-cont > p {
+  padding: 0.3rem 0.5rem;
+
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+  .filter-container {
+    margin-top: 1rem;
+    display: block;
+    width: 50%;
+    margin-inline: auto;
+  }
+
+  .filter-container > div {
+    margin-bottom: 0.5rem;
+  }
+
+  .btn-cont > p {
+    width: 50%;
+  }
+  .filter-container > div > input,
+  select {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .filter-container > div > input {
+    width: 70%;
+  }
+}
