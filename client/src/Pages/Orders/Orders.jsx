@@ -10,6 +10,7 @@ import { SET_LOADING } from "../../RTK/slice/ProductSlice";
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
 const Orders = () => {
+  console.log("rendered")
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const loading = useSelector((state) => state.product.loading);

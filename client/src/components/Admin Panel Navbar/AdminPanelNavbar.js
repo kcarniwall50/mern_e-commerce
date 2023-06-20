@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import "./adminPanelNavbar.css";
 
 const AdminPanelNavbar = () => {
+  console.log("rendered")
   return (
     <>
       <MdAdminPanelSettings

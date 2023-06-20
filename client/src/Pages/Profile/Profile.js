@@ -12,6 +12,7 @@ import Authenticator from "../../components/Authenticator/Authenticator";
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
 const Profile = () => {
+  console.log("rendered")
   const [changePass, setChangePass] = useState(false);
 
   const [user, setUser] = useState(null);

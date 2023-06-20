@@ -10,6 +10,8 @@ import { toast } from "react-toastify";
 import Authenticator from "../Authenticator/Authenticator";
 
 const Item = () => {
+
+  console.log("rendered")
   const dispatch = useDispatch();
 
   const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;

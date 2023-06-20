@@ -12,6 +12,7 @@ import Authenticator from "../../components/Authenticator/Authenticator";
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
 const UserDashboard = () => {
+  console.log("rendered")
   const dispatch = useDispatch();
 
   const loading = useSelector((state) => state.product.loading);

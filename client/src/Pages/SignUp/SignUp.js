@@ -5,10 +5,14 @@ import { toast } from "react-toastify";
 import { asyncUserSignUp, selectIsError } from "../../RTK/slice/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 import "./signUp.css";
+import Loader from "../../components/Layout/Loader/Loader";
 
 const SignUp = () => {
+  console.log("rendered")
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  const loading = useSelector((state) => state.user.isLoading);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -48,6 +52,10 @@ const SignUp = () => {
   };
 
   return (
+
+    <>
+    {loading && <Loader />}
+
     <div className="signUp-container">
       <FaUserPlus size="30" color="blue" className="signUp-user-icon" />
       <h2>Register</h2>
@@ -60,6 +68,7 @@ const SignUp = () => {
             name="name"
             value={name}
             onChange={inputChangeHandler}
+            required
           />
         </div>
 
@@ -71,6 +80,7 @@ const SignUp = () => {
             name="email"
             value={email}
             onChange={inputChangeHandler}
+            required
           />
         </div>
         <div className="signUp-inputs-container">
@@ -81,6 +91,7 @@ const SignUp = () => {
             name="password"
             value={password}
             onChange={inputChangeHandler}
+            required
           />
         </div>
 
@@ -92,6 +103,7 @@ const SignUp = () => {
             name="confiremPassword"
             value={confiremPassword}
             onChange={inputChangeHandler}
+            required
           />
         </div>
 
@@ -114,6 +126,7 @@ const SignUp = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

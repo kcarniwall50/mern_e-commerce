@@ -3,6 +3,7 @@ import "./filter.css";
 import axios from "axios";
 
 const Filter = ({ setProductData }) => {
+  console.log("rendered")
   const [searchKey, setSearchKey] = useState("");
   const [sort, setSort] = useState("popular");
   const [category, setCategory] = useState("all");

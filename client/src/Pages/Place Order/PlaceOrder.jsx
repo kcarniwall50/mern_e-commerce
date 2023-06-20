@@ -9,6 +9,7 @@ import Authenticator from "../../components/Authenticator/Authenticator";
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
 const PlaceOrder = () => {
+  console.log("rendered")
   const [data, setData] = useState({
     name: "",
     email: "",
@@ -173,7 +174,7 @@ const PlaceOrder = () => {
                   <div className="order-product" key={index}>
                     <p style={{ display: "flex", alignItems: "center" }}>
                       {item?.product?.name.slice(0, 20)}... &nbsp;
-                      <RxCross2 size={12} /> {item.quantity}{" "}
+                      <RxCross2 size={15} /> {item.quantity}{" "}
                     </p>
 
                     <p>₹{item.product?.price * item.quantity}</p>

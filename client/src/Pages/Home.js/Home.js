@@ -4,6 +4,7 @@ import homeImg from "../../assets/e-home.png";
 import { Link } from "react-router-dom";
 
 const Home = () => {
+  console.log("rendered")
   const isLogin = localStorage.getItem("eIsLogin");
 
   return (

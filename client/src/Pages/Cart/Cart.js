@@ -19,12 +19,14 @@ import Authenticator from "../../components/Authenticator/Authenticator";
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
 const Cart = () => {
+  console.log("rendered")
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
   const isError = useSelector((state) => state.product.error);
 
   const [cartProducts, setCartProducts] = useState([]);
+  const [width, setWidth] = useState();
 
   let price = 0;
 
@@ -111,21 +113,27 @@ const Cart = () => {
     }
   };
 
-
-  const [width, setWidth] = useState();
+  // console.log("rendered");
 
   useEffect(() => {
-    var screenWidth =
-      window.innerWidth ||
-      document.documentElement.clientWidth ||
-      document.body.clientWidth;
-    setWidth(screenWidth);
+    setWidth(window.innerWidth);
   }, []);
+
+  function handleResize() {
+    // Get the updated window dimensions
+    const width = window.innerWidth;
+    setWidth(width);
+
+    // Do something with the updated dimensions
+    // console.log(`Window resized to: ${width}`);
+  }
+
+  window.addEventListener("resize", handleResize);
 
   return (
     <>
       <Authenticator />
-      {loading && <Loader />}
+      {loading && <Loader className="cart-isue" />}
 
       <div className="cart-container">
         <h2>My Cart</h2>
@@ -144,31 +152,43 @@ const Cart = () => {
             {cartProducts.length > 0 &&
               cartProducts.map((item, index) => (
                 <Fragment key={index}>
+                  {/* -----------------------  small ------------    */}
+
                   {width <= 600 ? (
                     <div
                       className={
                         index % 2 !== 0 ? "cart-details ind" : "cart-details ab"
                       }
-                      style={{ margin: "0.8rem 0" }}
                     >
-                      <span>
-                        {" "}
-                        <span>Name: &nbsp;</span>
-                        <Link to={`/item/${item.product?._id}`}>
+                      {" "}
+                      <span
+                        style={{
+                          display: "flex",
+                          alignItems: "baseline",
+                          marginBottom: "0.6rem",
+                        }}
+                      >
+                        <span>Name:&nbsp;</span>
+                        <Link
+                          to={`/item/${item.product?._id}`}
+                          className="link-name"
+                        >
                           {`${(item.product?.name).slice(0, 40)}`}
                         </Link>
                       </span>
-                      <p>
+                      <span>
                         {" "}
                         <span>Price: &nbsp; </span>₹
                         {(item?.product?.price).toLocaleString()}
-                      </p>
-
-                      <p className="cartEdit">
-                        <span> Quantity: &nbsp;</span>
+                      </span>
+                      <span className="cartEdit">
+                        <span style={{ marginLeft: "-0.2rem" }}>
+                          {" "}
+                          Quantity: &nbsp;
+                        </span>
 
                         <BiMinus
-                          size={10}
+                          size={13}
                           color="grey"
                           className="cart-icon"
                           onClick={() =>
@@ -185,7 +205,7 @@ const Cart = () => {
                           {item?.quantity}
                         </span>
                         <BiPlus
-                          size={10}
+                          size={13}
                           color="grey"
                           className="cart-icon"
                           onClick={() =>
@@ -196,15 +216,15 @@ const Cart = () => {
                             )
                           }
                         />
-                      </p>
-
-                      <p>
+                      </span>
+                      <span>
                         {" "}
                         <span>Total: &nbsp; </span> ₹
-                        {(item.product?.price * item.quantity).toLocaleString()}
-                      </p>
-
-                      <p>
+                        {(
+                          item?.product?.price * item?.quantity
+                        ).toLocaleString()}
+                      </span>
+                      <span>
                         {" "}
                         <span>Delete: &nbsp;</span>
                         <MdDelete
@@ -212,9 +232,11 @@ const Cart = () => {
                           style={{ cursor: "pointer" }}
                           onClick={() => confirmDelete(index)}
                         />
-                      </p>
+                      </span>
                     </div>
                   ) : (
+                    // -----------------------  large -----------------
+
                     <div
                       className={
                         index % 2 !== 0 ? "cart-details ind" : "cart-details ab"
@@ -262,7 +284,12 @@ const Cart = () => {
                         />
                       </p>
 
-                      <p>₹{(item?.product?.price).toLocaleString()}</p>
+                      <p>
+                        ₹
+                        {(
+                          item?.product?.price * item?.quantity
+                        ).toLocaleString()}
+                      </p>
 
                       <p>
                         <MdDelete

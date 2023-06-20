@@ -10,6 +10,8 @@ import { selectCartQuantity } from "../../../RTK/slice/ProductSlice";
 import { selectName } from "../../../RTK/slice/userSlice";
 
 const Navbar = () => {
+  console.log("rendered")
+
   const isLogin = JSON.parse(localStorage.getItem("eIsLogin"));
   const isAdmin = JSON.parse(localStorage.getItem("isAdmin"));
   const login = useSelector((state) => state.user.login);
@@ -109,7 +111,7 @@ const Navbar = () => {
                 <BsCart4 className="cart" size="21" color="green" />
               </Link>
 
-              <span>&nbsp;{num || cartQuantity}</span>
+              <span>&nbsp;{ cartQuantity || num}</span>
             </li>
           )}
         </div>

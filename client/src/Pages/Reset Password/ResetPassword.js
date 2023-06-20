@@ -8,6 +8,7 @@ import { asyncResetPassword } from "../../RTK/slice/userSlice";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 
 const ResetPassword = () => {
+  console.log("rendered")
   const dispatch = useDispatch();
 
   const [formData, setFormData] = useState({

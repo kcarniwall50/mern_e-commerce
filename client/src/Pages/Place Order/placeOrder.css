@@ -9,8 +9,8 @@
 
 .order-details {
   display: flex;
-  justify-content: center;
-  gap: 10%;
+  justify-content: space-around;
+  /* gap: 10%; */
 }
 
 .shipping-details {
@@ -36,8 +36,9 @@
 }
 
 .order-summary {
-  height: 300px;
-  max-height: auto;
+  /* min-height: 200px; */
+  /* max-height: 300px; */
+  /* max-height: auto; */
   padding: 1rem;
   box-shadow: 1px 1px 4px 1px rgb(238, 239, 237);
   border-radius: 8px;
@@ -59,4 +60,35 @@
 .order-product > p {
   margin-bottom: 0.5rem;
   padding: 0.3rem;
+}
+
+@media screen and (max-width: 600px) {
+   
+
+   .shipping-details{
+    width:90%;
+    margin-inline: auto;
+    margin-bottom: 1.7rem;
+   }
+
+   .order-summary{
+    width:90%;
+    margin-inline: auto;
+   }
+
+   .input-container{
+    
+      /* width:90%; */
+      margin-inline: auto;
+     
+   }
+
+   .order-details{
+    display:block;
+
+   }
+
+   .inputs>input{
+    width: 90%;
+   }
 }

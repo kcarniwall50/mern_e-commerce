@@ -110,7 +110,7 @@ const nameStatus = localStorage.getItem("eLoginUser")
   : "";
 
 const initialState = {
-  isLoading: true,
+  isLoading: false,
   login: false,
   user: {},
   isAdmin: false,
@@ -122,6 +122,11 @@ const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
+
+    SET_LOADING(state, action) {
+      state.isLoading = action.payload;
+    },
+
     setName(state, action) {
       state.name = action.payload;
       localStorage.setItem("eLoginUser", JSON.stringify(action.payload));
@@ -285,7 +290,7 @@ const userSlice = createSlice({
   },
 });
 
-export const { setName, setLogin, setLogOut, setAdmin } = userSlice.actions;
+export const {  SET_LOADING ,setName, setLogin, setLogOut, setAdmin } = userSlice.actions;
 
 export const selectName = (state) => state.user.name;
 

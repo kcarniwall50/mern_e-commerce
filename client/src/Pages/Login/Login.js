@@ -1,17 +1,22 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { BiLogIn } from "react-icons/bi";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "./login.css";
-import { setAdmin, setLogin, setName } from "../../RTK/slice/userSlice";
+import { SET_LOADING, setAdmin, setLogin, setName } from "../../RTK/slice/userSlice";
+import Loader from "../../components/Layout/Loader/Loader";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
 const Login = () => {
+  console.log("rendered")
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+
+  const loading = useSelector((state) => state.user.isLoading);
 
   const [formData, setFormData] = useState({
     email: "",
@@ -31,11 +36,13 @@ const Login = () => {
     }
 
     try {
+      dispatch(SET_LOADING(true));
       const response = await axios.post(
         `${BACKEND_URL}/api/user/login`,
         formData,
         { withCredentials: true }
       );
+      dispatch(SET_LOADING(false));
       if (response.status === 200) {
         dispatch(setLogin(true));
         dispatch(setName(response.data.name));
@@ -50,6 +57,7 @@ const Login = () => {
         navigate("/userDashboard");
       }
     } catch (error) {
+      dispatch(SET_LOADING(false));
       console.log("errrr", error, "...");
 
       if (error.response.status === 404) {
@@ -62,6 +70,9 @@ const Login = () => {
   };
 
   return (
+    <>
+     {loading && <Loader />}
+    
     <div className="login-container">
       <BiLogIn size="30" color="blue" style={{ marginTop: "1rem" }} />
       <h2>Login</h2>
@@ -73,6 +84,7 @@ const Login = () => {
             name="email"
             value={email}
             onChange={inputChangeHandler}
+            required
           />
         </div>
         <div className="login-inputs">
@@ -82,6 +94,7 @@ const Login = () => {
             name="password"
             value={password}
             onChange={inputChangeHandler}
+            required
           />
         </div>
         <div className="login-submit">
@@ -101,6 +114,7 @@ const Login = () => {
         &nbsp;
       </div>
     </div>
+    </>
   );
 };
 

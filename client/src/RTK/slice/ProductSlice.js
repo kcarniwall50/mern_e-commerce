@@ -66,7 +66,6 @@ export const asyncDeleteCart = createAsyncThunk(
         { withCredentials: true }
       );
 
-      toast.success("deleted successfully");
       return response;
     } catch (error) {
       return error.message;
@@ -106,8 +105,20 @@ const ProductSlice = createSlice({
     },
 
     SET_CartQuantity(state, action) {
-      state.cartQuantity = action.payload;
+      
+      
+      // for new user
+      if(action.payload===undefined)
+      {
+        state.cartQuantity = 0;
+        localStorage.setItem("cartQuantity",0);
+      }
+
+      // for old user
+      else{
+        state.cartQuantity = action.payload;
       localStorage.setItem("cartQuantity", action.payload);
+      }
     },
   },
 
@@ -176,7 +187,10 @@ const ProductSlice = createSlice({
       .addCase(asyncDeleteCart.fulfilled, (state, action) => {
         state.loading = false;
         state.error = "";
+        console.log("data",action.payload.data?.length)
         state.cartQuantity = action.payload.data?.length;
+
+          localStorage.setItem("cartQuantity",action.payload.data?.length);
       })
 
       .addCase(asyncDeleteCart.rejected, (state, action) => {

@@ -25,7 +25,7 @@ import EditProduct from "./Pages/Admin Panel/EditProduct/EditProduct";
 import ShowNavbar from "./components/ShowNavbar/ShowNavbar";
 
 function App() {
-  if (process.env.REACT_APP_NODE_ENV === "production") {
+  if (process.env.REACT_APP_NODE_ENV !== "production") {
     console.log = function () {};
   }
 
