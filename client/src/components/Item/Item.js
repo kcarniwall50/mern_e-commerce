@@ -18,7 +18,7 @@ const Item = () => {
 
   const loading = useSelector((state) => state.product.loading);
 
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
   const [product, setProduct] = useState([]);
   const [rating, setRating] = useState(5);
   const [comment, setComment] = useState("");
