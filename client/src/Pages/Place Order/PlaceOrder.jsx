@@ -30,7 +30,7 @@ const PlaceOrder = () => {
     setData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  let amount = 0;
+  let amount;
 
   useEffect(() => {
     async function getCartItems() {
@@ -177,7 +177,7 @@ const PlaceOrder = () => {
                       <RxCross2 size={15} /> {item.quantity}{" "}
                     </p>
 
-                    <p>₹{item.product?.price * item.quantity}</p>
+                    <p>₹{(item.product?.price * item.quantity).toLocaleString()}</p>
                     <small style={{ display: "none" }}>
                       {(amount += item.product?.price * item.quantity)}
                     </small>
@@ -187,7 +187,7 @@ const PlaceOrder = () => {
 
             <div style={{ textAlign: "center" }}>
               <div style={{ margin: "1rem  0" }}>
-                <b>Total:</b> &nbsp; <span>₹{amount}</span>
+                <b>Total:</b> &nbsp; <span>₹{amount.toLocaleString()}</span>
               </div>
 
               <button
